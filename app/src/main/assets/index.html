@@ -2,36 +2,90 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <title>CodeText Pro</title>
-<style>
-  :root { --bg:#0f1115; --card:#1a1d24; --accent:#4f8cff; --text:#e8eaed; --muted:#8a8f98; }
-  * { box-sizing:border-box; margin:0; padding:0; }
-  body { background:var(--bg); color:var(--text); font-family:system-ui,sans-serif;
-         min-height:100vh; padding:20px 16px 90px; overflow-x:hidden; }
-  h1 { font-size:22px; } p.sub { color:var(--muted); margin:4px 0 20px; font-size:14px; }
-  .grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-  .card { background:var(--card); border-radius:16px; padding:18px 14px; }
-  .card .ic { font-size:26px; } .card b { display:block; margin-top:8px; }
-  .card small { color:var(--muted); }
-  nav { position:fixed; bottom:0; left:0; right:0; display:flex; background:var(--card);
-        padding:10px 0; border-top:1px solid #272b33; }
-  nav div { flex:1; text-align:center; font-size:12px; color:var(--muted); }
-  nav div.on { color:var(--accent); }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<main id="home" class="screen on">
   <h1>CodeText Pro</h1>
   <p class="sub">Text, Code &amp; PDF Editor</p>
-  <div class="grid">
-    <div class="card"><div class="ic">📝</div><b>Text Editor</b><small>जल्द आ रहा है</small></div>
-    <div class="card"><div class="ic">💻</div><b>Code Editor</b><small>जल्द आ रहा है</small></div>
-    <div class="card"><div class="ic">📄</div><b>PDF Tools</b><small>जल्द आ रहा है</small></div>
-    <div class="card"><div class="ic">📁</div><b>File Manager</b><small>जल्द आ रहा है</small></div>
+  <div class="row2">
+    <button class="pbtn" data-act="new">➕ नई फाइल</button>
+    <button class="pbtn alt" data-act="open">📂 फाइल खोलें</button>
   </div>
-  <nav>
-    <div class="on">🏠<br>Home</div><div>📝<br>Text</div><div>💻<br>Code</div>
-    <div>📄<br>PDF</div><div>⚙️<br>Settings</div>
-  </nav>
+  <div class="grid">
+    <div class="card" data-go="text"><div class="ic">📝</div><b>Text Editor</b><small>तैयार ✓</small></div>
+    <div class="card" data-go="code"><div class="ic">💻</div><b>Code Editor</b><small>जल्द आ रहा है</small></div>
+    <div class="card" data-go="pdf"><div class="ic">📄</div><b>PDF Tools</b><small>जल्द आ रहा है</small></div>
+    <div class="card" data-act="soon"><div class="ic">📁</div><b>File Manager</b><small>जल्द आ रहा है</small></div>
+  </div>
+</main>
+
+<section id="text" class="screen">
+  <div class="tb">
+    <button data-act="new">➕</button>
+    <button data-act="open">📂</button>
+    <button data-act="save">💾</button>
+    <button data-act="saveas">Save As</button>
+    <button data-act="undo">↶</button>
+    <button data-act="redo">↷</button>
+    <button data-act="find">🔍</button>
+    <button data-act="all">सब चुनें</button>
+    <button data-act="copy">कॉपी</button>
+    <button data-act="cut">कट</button>
+    <button data-act="paste">पेस्ट</button>
+    <button data-act="fminus">A−</button>
+    <button data-act="fplus">A+</button>
+    <button data-act="align">⇔</button>
+    <select id="ff">
+      <option value="monospace">Mono</option>
+      <option value="system-ui, sans-serif">Sans</option>
+      <option value="Georgia, serif">Serif</option>
+    </select>
+  </div>
+  <div class="tabs" id="tabs"></div>
+  <div id="findbar" hidden>
+    <div class="fr"><input id="fq" placeholder="खोजें"><button data-act="fprev">▲</button><button data-act="fnext">▼</button></div>
+    <div class="fr"><input id="rq" placeholder="बदलें"><button data-act="rep">बदलें</button><button data-act="repall">सब</button></div>
+    <div class="fr2"><label><input type="checkbox" id="cs"> Aa केस मिलाएँ</label><span id="fcount"></span></div>
+  </div>
+  <textarea id="ed" spellcheck="false" autocomplete="off" autocapitalize="off"></textarea>
+  <div id="stats"></div>
+</section>
+
+<section id="code" class="screen">
+  <h2>💻 Code Editor</h2>
+  <p class="sub">भाग 3 में आएगा (Syntax highlighting, line numbers, HTML preview)।</p>
+</section>
+
+<section id="pdf" class="screen">
+  <h2>📄 PDF Tools</h2>
+  <p class="sub">भाग 4 में आएगा (A4/A5/Letter, header/footer, page number)।</p>
+</section>
+
+<section id="settings" class="screen">
+  <h2>⚙️ Settings</h2>
+  <p class="sub">थीम चुनें</p>
+  <div class="row2">
+    <button class="pbtn alt" data-act="dark">🌙 Dark</button>
+    <button class="pbtn alt" data-act="light">☀️ Light</button>
+  </div>
+  <p class="sub" id="ver"></p>
+</section>
+
+<nav>
+  <button data-go="home" class="on">🏠<span>Home</span></button>
+  <button data-go="text">📝<span>Text</span></button>
+  <button data-go="code">💻<span>Code</span></button>
+  <button data-go="pdf">📄<span>PDF</span></button>
+  <button data-go="settings">⚙️<span>Settings</span></button>
+</nav>
+
+<div id="modal" hidden><div class="box"><p id="mmsg"></p><div id="mbtns"></div></div></div>
+<div id="toast" hidden></div>
+
+<script src="app.js"></script>
 </body>
-</html>
+    </html>
