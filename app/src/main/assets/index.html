@@ -56,9 +56,34 @@
 </section>
 
 <section id="code" class="screen">
-  <h2>💻 Code Editor</h2>
-  <p class="sub">भाग 3 में आएगा (Syntax highlighting, line numbers, HTML preview)।</p>
+  <div class="tb">
+    <button data-c="new">➕</button>
+    <button data-c="open">📂</button>
+    <button data-c="save">💾</button>
+    <button data-c="saveas">Save As</button>
+    <button data-c="undo">↶</button>
+    <button data-c="redo">↷</button>
+    <button data-c="find">🔍</button>
+    <button data-c="fminus">A−</button>
+    <button data-c="fplus">A+</button>
+    <button data-c="preview">▶ Preview</button>
+    <select id="clang"></select>
+  </div>
+  <div class="tabs" id="ctabs"></div>
+  <div id="cm"></div>
+  <div id="cstats"></div>
 </section>
+
+<section id="preview" class="screen">
+  <div class="tb">
+    <button data-go="code">← वापस</button>
+    <span class="ptitle">HTML Preview · सुरक्षित मोड</span>
+  </div>
+  <iframe id="pv" sandbox=""></iframe>
+</section>
+
+<button id="gopv" data-go="preview" hidden></button>
+<button id="gocode" data-go="code" hidden></button>
 
 <section id="pdf" class="screen">
   <h2>📄 PDF Tools</h2>
