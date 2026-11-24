@@ -19,7 +19,7 @@
     <div class="card" data-go="text"><div class="ic">📝</div><b>Text Editor</b><small>तैयार ✓</small></div>
     <div class="card" data-go="code"><div class="ic">💻</div><b>Code Editor</b><small>जल्द आ रहा है</small></div>
     <div class="card" data-go="pdf"><div class="ic">📄</div><b>PDF Tools</b><small>जल्द आ रहा है</small></div>
-    <div class="card" data-act="soon"><div class="ic">📁</div><b>File Manager</b><small>जल्द आ रहा है</small></div>
+    <div class="card" data-go="files"><div class="ic">📁</div><b>File Manager</b><small>तैयार ✓</small></div>
   </div>
 </main>
 
@@ -147,14 +147,37 @@
 </section>
 
 <button id="gopdfv" data-go="pdfview" hidden></button>
-
+<section id="files" class="screen">
+  <div class="ftabs">
+    <button id="tfold" data-f="tabfolder" class="on">📁 फोल्डर</button>
+    <button id="trec" data-f="tabrecent">🕘 Recent</button>
+  </div>
+  <div id="ffolder">
+    <div class="tb">
+      <button data-f="up">⬆ ऊपर</button>
+      <button data-f="nfile">➕ फाइल</button>
+      <button data-f="nfolder">➕ फोल्डर</button>
+      <button data-f="import">📥 Import</button>
+      <button data-f="pick">📂 फोल्डर बदलें</button>
+      <button data-f="refresh">⟳</button>
+    </div>
+    <div id="fpath"></div>
+    <div id="flist"></div>
+  </div>
+  <div id="frecent" hidden></div>
+</section>
 <section id="settings" class="screen">
   <h2>⚙️ Settings</h2>
-  <p class="sub">थीम चुनें</p>
+  <p class="sub">थीम</p>
   <div class="row2">
-    <button class="pbtn alt" data-act="dark">🌙 Dark</button>
-    <button class="pbtn alt" data-act="light">☀️ Light</button>
+    <button class="pbtn alt" id="bdark" data-act="dark">🌙 Dark</button>
+    <button class="pbtn alt" id="blight" data-act="light">☀️ Light</button>
   </div>
+  <p class="sub">Recent फाइलें</p>
+  <div class="row2">
+    <button class="pbtn alt" data-f="clrrecent">🗑 Recent सूची साफ़ करें</button>
+  </div>
+  <p class="sub">फ़ॉन्ट साइज़ Text और Code Editor के टूलबार में A− / A+ से बदलें।</p>
   <p class="sub" id="ver"></p>
 </section>
 
@@ -172,5 +195,6 @@
 <script src="app.js"></script>
 <script src="code.js"></script>
 <script src="pdf.js"></script>
+<script src="files.js"></script>
 </body>
     </html>
