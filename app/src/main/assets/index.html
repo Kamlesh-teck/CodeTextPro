@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CodeText Pro</title>
+<style>
+  :root { --bg:#0f1115; --card:#1a1d24; --accent:#4f8cff; --text:#e8eaed; --muted:#8a8f98; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--text); font-family:system-ui,sans-serif;
+         min-height:100vh; padding:20px 16px 90px; overflow-x:hidden; }
+  h1 { font-size:22px; } p.sub { color:var(--muted); margin:4px 0 20px; font-size:14px; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .card { background:var(--card); border-radius:16px; padding:18px 14px; }
+  .card .ic { font-size:26px; } .card b { display:block; margin-top:8px; }
+  .card small { color:var(--muted); }
+  nav { position:fixed; bottom:0; left:0; right:0; display:flex; background:var(--card);
+        padding:10px 0; border-top:1px solid #272b33; }
+  nav div { flex:1; text-align:center; font-size:12px; color:var(--muted); }
+  nav div.on { color:var(--accent); }
+</style>
+</head>
+<body>
+  <h1>CodeText Pro</h1>
+  <p class="sub">Text, Code &amp; PDF Editor</p>
+  <div class="grid">
+    <div class="card"><div class="ic">📝</div><b>Text Editor</b><small>जल्द आ रहा है</small></div>
+    <div class="card"><div class="ic">💻</div><b>Code Editor</b><small>जल्द आ रहा है</small></div>
+    <div class="card"><div class="ic">📄</div><b>PDF Tools</b><small>जल्द आ रहा है</small></div>
+    <div class="card"><div class="ic">📁</div><b>File Manager</b><small>जल्द आ रहा है</small></div>
+  </div>
+  <nav>
+    <div class="on">🏠<br>Home</div><div>📝<br>Text</div><div>💻<br>Code</div>
+    <div>📄<br>PDF</div><div>⚙️<br>Settings</div>
+  </nav>
+</body>
+</html>
