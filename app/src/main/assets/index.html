@@ -87,8 +87,66 @@
 
 <section id="pdf" class="screen">
   <h2>📄 PDF Tools</h2>
-  <p class="sub">भाग 4 में आएगा (A4/A5/Letter, header/footer, page number)।</p>
+  <p class="sub">टेक्स्ट, कोड या HTML से PDF बनाएँ</p>
+
+  <label class="fl">स्रोत
+    <select id="psrc">
+      <option value="text">📝 Text Editor का वर्तमान Tab</option>
+      <option value="code">💻 Code Editor का वर्तमान Tab</option>
+      <option value="html">🌐 Code Tab से HTML रेंडर (Print dialog)</option>
+    </select>
+  </label>
+
+  <div class="fgrid">
+    <label class="fl">पेज साइज़
+      <select id="psize"><option>A4</option><option>A5</option><option>Letter</option></select>
+    </label>
+    <label class="fl">दिशा
+      <select id="porient"><option value="portrait">Portrait</option><option value="landscape">Landscape</option></select>
+    </label>
+    <label class="fl">फ़ॉन्ट
+      <select id="pfont"><option value="sans">Sans</option><option value="serif">Serif</option><option value="mono">Mono</option></select>
+    </label>
+    <label class="fl">फ़ॉन्ट साइज़
+      <input id="pfs" type="number" value="12" min="6" max="36">
+    </label>
+    <label class="fl">मार्जिन (mm)
+      <input id="pmargin" type="number" value="20" min="5" max="50">
+    </label>
+    <label class="fl">फ़ाइल नाम
+      <input id="pname" value="document.pdf">
+    </label>
+  </div>
+
+  <label class="fl">Header
+    <input id="phead" placeholder="हर पेज के ऊपर">
+  </label>
+  <label class="fl">Footer
+    <input id="pfoot" placeholder="हर पेज के नीचे">
+  </label>
+  <label class="chk"><input type="checkbox" id="pnum" checked> पेज नंबर दिखाएँ</label>
+
+  <div class="row2">
+    <button class="pbtn" data-p="make">📄 PDF बनाएँ</button>
+    <button class="pbtn alt" data-p="open">📂 PDF खोलें</button>
+  </div>
+  <p class="sub" id="pnote"></p>
 </section>
+
+<section id="pdfview" class="screen">
+  <div class="tb">
+    <button data-go="pdf">← वापस</button>
+    <button data-p="save">💾 Save</button>
+    <button data-p="share">📤 Share</button>
+    <button data-p="print">🖨 Print</button>
+    <button data-p="zout">🔍−</button>
+    <button data-p="zin">🔍+</button>
+    <span class="ptitle" id="pinfo"></span>
+  </div>
+  <div id="pages"></div>
+</section>
+
+<button id="gopdfv" data-go="pdfview" hidden></button>
 
 <section id="settings" class="screen">
   <h2>⚙️ Settings</h2>
