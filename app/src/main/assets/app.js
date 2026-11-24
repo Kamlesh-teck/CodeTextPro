@@ -47,7 +47,7 @@
     $('#modal').hidden = true;
     if (modalRes) { const r = modalRes; modalRes = null; r(i); }
   }
-
+window.ctpAsk = ask; window.ctpToast = toast;
   /* ---------- Tabs ---------- */
   const dirty = t => t.content !== t.saved;
 
