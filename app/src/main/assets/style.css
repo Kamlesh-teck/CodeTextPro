@@ -10,7 +10,7 @@ p.sub{color:var(--muted);margin:4px 0 18px;font-size:14px}
 
 .screen{display:none;flex:1;min-height:0;flex-direction:column}
 .screen.on{display:flex}
-#home,#code,#pdf,#settings{padding:20px 16px;overflow-y:auto}
+#home,#pdf,#settings{padding:20px 16px;overflow-y:auto}
 
 .row2{display:flex;gap:10px;margin-bottom:16px}
 .pbtn{flex:1;padding:14px 8px;border:0;border-radius:14px;background:var(--accent);color:#fff;font-size:15px;font-weight:600}
@@ -53,3 +53,11 @@ nav button.on{color:var(--accent)}
 #mbtns button.danger{background:#d94646;color:#fff}
 
 #toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:#323741;color:#fff;padding:10px 16px;border-radius:20px;font-size:13px;z-index:11;max-width:90%}
+#cm{flex:1;min-height:0;overflow:hidden;background:var(--ed)}
+#cm .cm-editor{height:100%;font-size:var(--cfs,14px)}
+#cm .cm-editor.cm-focused{outline:none}
+#cm .cm-scroller{overflow:auto}
+#cm .cm-panel input,#cm .cm-panel button{font-size:14px;min-height:30px}
+#cstats{flex:none;padding:5px 10px;font-size:12px;color:var(--muted);background:var(--card);border-top:1px solid var(--line);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#pv{flex:1;min-height:0;width:100%;border:0;background:#fff}
+.ptitle{flex:none;align-self:center;font-size:13px;color:var(--muted);padding:0 8px}
